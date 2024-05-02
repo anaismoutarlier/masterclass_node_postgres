@@ -22,13 +22,6 @@ app.get("/rooms/:room_id([0-9]+)", async (req, res) => {
   res.json({ result: true, data: data.rows });
 });
 
-/*
- 	app.post("/rooms", async (req, res) => {
-		const newRoom = await Room.create(req.body);
-		res.json({ result: true });
- 	});
- */
-
 app.post("/rooms", async (req, res) => {
   const { name, num_occupancy } = req.body;
   const data = await db.query(
